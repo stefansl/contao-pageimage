@@ -46,7 +46,6 @@ class PageimageController extends AbstractFrontendModuleController
         }
 
         $size = StringUtil::deserialize($model->imgSize);
-        $image['src'] = Image::get($image['path'], $size[0], $size[1], $size[2]);
 
         $template->setData(array_merge($template->getData(), $templateData[0]));
         $template->allImages = $templateData;
