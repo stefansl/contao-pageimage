@@ -108,7 +108,17 @@ class PageimageController extends AbstractFrontendModuleController
         $image['size'] = $model->imgSize;
 
         $result = (object) $image;
-        Controller::addImageToTemplate($result, $image);
+        
+        $figureBuilder = System::getContainer()->get('contao.image.studio')->createFigureBuilder();
+        $figureBuilder
+                ->fromPath($image['singleSRC'])
+            ;
+
+        $figure = $figureBuilder
+            ->setSize($image['size'])
+            ->buildIfResourceExists();
+
+        $figure->applyLegacyTemplateData($result, null, null, true);
 
         return (array) $result;
     }
