@@ -48,6 +48,14 @@ class PageimageController extends AbstractFrontendModuleController
 
         $size = StringUtil::deserialize($model->imgSize);
 
+        $container = System::getContainer();
+        $rootDir = $container->getParameter('kernel.project_dir');
+        $image = $container
+            ->get('contao.image.factory')
+            ->create($rootDir . '/' . $image['path'], [$size[0], $size[1], $size[2]])
+            ->getUrl($rootDir)
+        ;
+        
         $template->setData(array_merge($template->getData(), $templateData[0]));
         $template->allImages = $templateData;
 
