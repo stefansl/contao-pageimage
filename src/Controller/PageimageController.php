@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Terminal42\PageimageBundle\PageimageHelper;
 
 /**
- * @FrontendModule(category="miscellaneous")
+ * @FrontendModule(category="miscellaneous",template="mod_pageimage")
  */
 class PageimageController extends AbstractFrontendModuleController
 {
