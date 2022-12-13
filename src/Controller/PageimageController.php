@@ -32,7 +32,7 @@ class PageimageController extends AbstractFrontendModuleController
         $this->helper = $helper;
     }
 
-    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $images = $this->getImages($model);
 
