@@ -7,6 +7,7 @@ namespace Terminal42\PageimageBundle\Controller;
 use Contao\Controller;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate
 use Contao\Image;
 use Contao\ModuleModel;
 use Contao\PageModel;
